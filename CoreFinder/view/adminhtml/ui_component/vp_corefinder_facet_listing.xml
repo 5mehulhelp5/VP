@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : view/adminhtml/ui_component/vp_corefinder_facet_listing.xml
+  Rôle : UI Component listing des facettes dans le back-office (grille BO)
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">vp_corefinder_facet_listing.vp_corefinder_facet_listing_data_source</item>
+            <item name="deps" xsi:type="string">vp_corefinder_facet_listing.vp_corefinder_facet_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">facet_columns</item>
+    </argument>
+    <dataSource name="vp_corefinder_facet_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">vp_corefinder_facet_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">facet_id</argument>
+            <argument name="requestFieldName" xsi:type="string">facet_id</argument>
+            <argument name="collection" xsi:type="string">VP\CoreFinder\Model\ResourceModel\Facet\Collection</argument>
+        </argument>
+    </dataSource>
+    <columns name="facet_columns">
+        <column name="facet_id">
+            <settings>
+                <filter>textRange</filter>
+                <label>ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="attribute_code">
+            <settings>
+                <filter>text</filter>
+                <label>Code Attribut</label>
+            </settings>
+        </column>
+        <column name="label">
+            <settings>
+                <filter>text</filter>
+                <label>Nom affiché</label>
+            </settings>
+        </column>
+        <column name="frontend_type">
+            <settings>
+                <filter>select</filter>
+                <label>Type d’affichage</label>
+                <options class="VP\CoreFinder\Ui\Component\Listing\Column\FrontendTypeOptions"/>
+            </settings>
+        </column>
+        <column name="position">
+            <settings>
+                <filter>textRange</filter>
+                <label>Ordre</label>
+            </settings>
+        </column>
+        <column name="is_enabled">
+            <settings>
+                <filter>select</filter>
+                <label>Activé</label>
+                <options class="Magento\Config\Model\Config\Source\Yesno"/>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Magento\Ui\Component\Listing\Columns\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">facet_id</item>
+                    <item name="viewUrlPath" xsi:type="string">corefinder/facet/edit</item>
+                    <item name="urlEntityParamName" xsi:type="string">facet_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>
