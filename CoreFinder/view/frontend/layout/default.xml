@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : view/frontend/layout/default.xml
+  Rôle : Injection globale du CSS des facettes sur toutes les pages du site
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <head>
+        <css src="VP_CoreFinder::css/source/_facets.less"/>
+    </head>
+
+</page>
