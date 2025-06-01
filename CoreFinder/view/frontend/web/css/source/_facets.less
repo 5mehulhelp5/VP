@@ -1,0 +1,47 @@
+/**
+ * Module : VP_CoreFinder
+ * Fichier : view/frontend/web/css/source/_facets.less
+ * Rôle : Thème visuel des facettes (modifiable depuis le back-office)
+ * Auteur : Auzoult Marc-Antoine
+ * Date : 2025-06-01
+ */
+
+.vp-facets {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .facet-item {
+        margin-bottom: 8px;
+        label {
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    }
+
+    .facet-actions {
+        margin-top: 15px;
+        button {
+            background-color: #007bdb;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            &:hover {
+                background-color: #005fab;
+            }
+        }
+    }
+}
