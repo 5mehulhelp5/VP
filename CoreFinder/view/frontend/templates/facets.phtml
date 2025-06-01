@@ -1,0 +1,35 @@
+<?php
+/**
+ * Module : VP_CoreFinder
+ * Fichier : view/frontend/templates/facets.phtml
+ * Rôle : Template d’affichage des facettes dynamiques (sidebar)
+ * Auteur : Auzoult Marc-Antoine
+ * Date : 2025-06-01
+ *
+ * @var \VP\CoreFinder\Block\FacetList $block
+ */
+
+$facets = $block->getFacets();
+if (empty($facets)) {
+    return;
+}
+?>
+
+<div class="vp-facets">
+    <h3><?= __('Filtres disponibles') ?></h3>
+    <form method="get" action="<?= $block->escapeUrl($block->getUrl('*/*/*', ['_current' => true])) ?>">
+        <?php foreach ($facets as $facet): ?>
+            <div class="facet-item">
+                <label>
+                    <input type="checkbox"
+                           name="vp_filter[<?= $block->escapeHtml($facet->getData('attribute_code')) ?>][]"
+                           value="<?= $block->escapeHtml($facet->getData('label')) ?>">
+                    <?= $block->escapeHtml($facet->getData('label')) ?>
+                </label>
+            </div>
+        <?php endforeach; ?>
+        <div class="facet-actions">
+            <button type="submit"><?= __('Appliquer') ?></button>
+        </div>
+    </form>
+</div>
