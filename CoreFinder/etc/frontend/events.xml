@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : etc/frontend/events.xml
+  Rôle : Déclare les observers frontend (ex : injection dynamique des blocs CoreFinder)
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_load_before">
+        <observer name="vp_corefinder_add_layout_handles" instance="VP\CoreFinder\Observer\AddLayoutHandlesObserver" />
+    </event>
+</config>
