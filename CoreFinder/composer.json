@@ -1,0 +1,29 @@
+{
+  "name": "vp/module-corefinder",
+  "description": "Module VP_CoreFinder - Moteur de recherche intelligent, facettes dynamiques, suggestions IA embarquée.",
+  "type": "magento2-module",
+  "version": "1.6.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Marc-Antoine Auzoult",
+      "email": "contact@viking-production.fr",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "magento/framework": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "VP\\CoreFinder\\": ""
+    }
+  }
+}
