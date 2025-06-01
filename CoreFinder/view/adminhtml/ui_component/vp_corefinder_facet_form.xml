@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : view/adminhtml/ui_component/vp_corefinder_facet_form.xml
+  Rôle : Formulaire d’édition/ajout de facettes dans le back-office (BO)
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">vp_corefinder_facet_form.vp_corefinder_facet_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string">Facette</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">save</item>
+            <item name="reset" xsi:type="string">reset</item>
+            <item name="delete" xsi:type="string">delete</item>
+            <item name="back" xsi:type="string">back</item>
+        </item>
+    </argument>
+    <dataSource name="vp_corefinder_facet_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Ui\DataProvider\AbstractDataProvider</argument>
+            <argument name="name" xsi:type="string">vp_corefinder_facet_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">facet_id</argument>
+            <argument name="requestFieldName" xsi:type="string">facet_id</argument>
+            <argument name="collection" xsi:type="string">VP\CoreFinder\Model\ResourceModel\Facet\Collection</argument>
+        </argument>
+        <settings>
+            <submitUrl path="corefinder/facet/save"/>
+        </settings>
+    </dataSource>
+    <fieldset name="general">
+        <field name="attribute_code">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Code Attribut Produit</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </field>
+        <field name="label">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Label Affiché</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </field>
+        <field name="frontend_type">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Type d’affichage</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="options" xsi:type="array">
+                        <item name="checkbox" xsi:type="string">Case à cocher</item>
+                        <item name="slider" xsi:type="string">Slider</item>
+                        <item name="select" xsi:type="string">Liste déroulante</item>
+                    </item>
+                    <item name="required" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </field>
+        <field name="position">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Ordre d’Affichage</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </field>
+        <field name="color_code">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Couleur HEX (optionnel)</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                </item>
+            </argument>
+        </field>
+        <field name="icon_url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">URL d’icône (optionnel)</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_enabled">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Actif ?</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
