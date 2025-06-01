@@ -1,0 +1,14 @@
+<?php
+/**
+ * Module : VP_CoreFinder
+ * Fichier : view/adminhtml/templates/system/config/download_button.phtml
+ * Rôle : Template du bouton de téléchargement du modèle IA ONNX dans le BO
+ * Auteur : Auzoult Marc-Antoine
+ * Date : 2025-06-01
+ */
+?>
+<div>
+    <button id="corefinder-download-model" type="button" onclick="setLocation('<?= $block->escapeUrl($block->getDownloadUrl()) ?>')">
+        Télécharger le modèle IA ONNX
+    </button>
+</div>
