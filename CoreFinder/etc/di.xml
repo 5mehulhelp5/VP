@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : etc/di.xml
+  Rôle : Dépendances et préférences d’injection pour le moteur de recherche et les facettes
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Repository Facet -->
+    <preference for="VP\CoreFinder\Api\FacetRepositoryInterface" type="VP\CoreFinder\Model\FacetRepository" />
+
+    <!-- Indexation IA -->
+    <type name="VP\CoreFinder\Helper\Ai">
+        <arguments>
+            <argument name="modelPath" xsi:type="string">pub/media/corefinder/onnx/model.onnx</argument>
+        </arguments>
+    </type>
+
+    <!-- Ajout d'un plugin sur l'indexation standard -->
+    <type name="Magento\CatalogSearch\Model\Indexer\Fulltext">
+        <plugin name="vp_corefinder_plugin_search" type="VP\CoreFinder\Plugin\Search\CustomIndexer" sortOrder="10"/>
+    </type>
+
+</config>
