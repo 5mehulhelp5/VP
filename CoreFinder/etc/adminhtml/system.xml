@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : etc/adminhtml/system.xml
+  Rôle : Déclaration des paramètres configurables du module dans le back-office
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="corefinder" translate="label" sortOrder="700" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>VP CoreFinder</label>
+            <tab>general</tab>
+            <resource>VP_CoreFinder::config</resource>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Paramètres généraux</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Activer la recherche CoreFinder</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="max_suggestions" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nombre maximum de suggestions</label>
+                    <validate>validate-digits</validate>
+                </field>
+
+                <field id="enable_ia" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Activer l'IA embarquée</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="download_model" translate="label" type="button" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Télécharger le modèle IA ONNX</label>
+                    <frontend_model>VP\CoreFinder\Block\Adminhtml\System\Config\DownloadButton</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
