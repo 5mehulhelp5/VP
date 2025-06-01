@@ -1,0 +1,13 @@
+Copyright © 2025 Auzoult Marc-Antoine (Viking Production)
+
+Tous droits réservés.
+
+Le module VP_CoreFinder est un logiciel propriétaire développé et distribué par Marc-Antoine Auzoult (Viking Production). 
+L'utilisation, la reproduction, la modification, la distribution ou la vente de ce module sont strictement interdites sans autorisation écrite ou licence commerciale expresse délivrée par le titulaire des droits.
+
+Chaque installation ou utilisation doit faire l'objet d'une autorisation/licence nominative. 
+Le non-respect de ces conditions expose à des poursuites judiciaires.
+
+Pour toute demande de licence ou d'autorisation, contactez : contact@viking-production.fr
+
+Ce module ne peut être utilisé que par la personne ou l'entité explicitement autorisée.
