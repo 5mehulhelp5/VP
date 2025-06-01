@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+  Module : VP_CoreFinder
+  Fichier : etc/adminhtml/menu.xml
+  Rôle : Déclaration de l’entrée de menu dans l’admin Magento pour gérer les facettes
+  Auteur : Auzoult Marc-Antoine
+  Date : 2025-06-01
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="VP_CoreFinder::facets"
+             title="Facettes CoreFinder"
+             module="VP_CoreFinder"
+             sortOrder="71"
+             parent="Magento_Backend::marketing"
+             action="corefinder/facet/index"
+             resource="VP_CoreFinder::facets"/>
+    </menu>
+</config>
